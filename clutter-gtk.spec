@@ -28,40 +28,40 @@ developer. The Clutter API is intended to be easy to use, efficient
 and flexible.
 
 %package devel
-Summary:	Header files for clutter-gst library
-Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki clutter-gst
+Summary:	Header files for clutter-gtk library
+Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki clutter-gtk
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
 %description devel
-Header files for clutter-gst library.
+Header files for clutter-gtk library.
 
 %description devel -l pl.UTF-8
-Pliki nagłówkowe biblioteki clutter-gst.
+Pliki nagłówkowe biblioteki clutter-gtk.
 
 %package static
-Summary:	Static clutter-gst library
-Summary(pl.UTF-8):	Statyczna biblioteka clutter-gst
+Summary:	Static clutter-gtk library
+Summary(pl.UTF-8):	Statyczna biblioteka clutter-gtk
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
-Static clutter-gst library.
+Static clutter-gtk library.
 
 %description static -l pl.UTF-8
-Statyczna biblioteka clutter-gst.
+Statyczna biblioteka clutter-gtk.
 
 %package apidocs
-Summary:	clutter-gst API documentation
-Summary(pl.UTF-8):	Dokumentacja API clutter-gst
+Summary:	clutter-gtk API documentation
+Summary(pl.UTF-8):	Dokumentacja API clutter-gtk
 Group:		Documentation
 Requires:	gtk-doc-common
 
 %description apidocs
-clutter-gst API documentation.
+clutter-gtk API documentation.
 
 %description apidocs -l pl.UTF-8
-Dokumentacja API clutter-gst.
+Dokumentacja API clutter-gtk.
 
 %prep
 %setup -q

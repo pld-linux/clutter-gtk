@@ -1,13 +1,13 @@
-#
 Summary:	Library integrating clutter with GTK+
+Summary(pl.UTF-8):	Biblioteka integrująca clutter z GTK+
 Name:		clutter-gtk
 Version:	0.1.0
 Release:	1
-License:	GPL v2
-Group:		Applications
+License:	LGPL v2+
+Group:		Libraries
 Source0:	http://www.clutter-project.org/sources/clutter-gtk/0.1/%{name}-%{version}.tar.gz
 # Source0-md5:	0b0b30203a432d581aae91d1ca7d6367
-URL:		http://www.clutter-project.com/
+URL:		http://www.clutter-project.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	clutter-devel
@@ -17,15 +17,10 @@ BuildRequires:	gtk-doc-common
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-Clutter is an open source software library for creating fast, visually
-rich graphical user interfaces. The most obvious example of potential
-usage is in media center type applications. We hope however it can be
-used for a lot more.
+Library integrating clutter with GTK+.
 
-Clutter uses OpenGL (and soon optionally OpenGL ES) for rendering but
-with an API which hides the underlying GL complexity from the
-developer. The Clutter API is intended to be easy to use, efficient
-and flexible.
+%description -l pl.UTF-8
+Biblioteka integrująca clutter z GTK+.
 
 %package devel
 Summary:	Header files for clutter-gtk library

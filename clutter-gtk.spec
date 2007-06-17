@@ -8,12 +8,13 @@ Group:		Libraries
 Source0:	http://www.clutter-project.org/sources/clutter-gtk/0.1/%{name}-%{version}.tar.gz
 # Source0-md5:	0b0b30203a432d581aae91d1ca7d6367
 URL:		http://www.clutter-project.org/
-BuildRequires:	autoconf
-BuildRequires:	automake
-BuildRequires:	clutter-devel
-BuildRequires:	glib2-devel
-BuildRequires:	gtk+2-devel
-BuildRequires:	gtk-doc-common
+BuildRequires:	autoconf >= 2.53
+BuildRequires:	automake >= 1:1.7
+BuildRequires:	clutter-devel >= 0.2.2
+BuildRequires:	gtk+2-devel >= 2:2.10.0
+BuildRequires:	gtk-doc >= 1.4
+BuildRequires:	libtool
+BuildRequires:	pkgconfig
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -27,6 +28,8 @@ Summary:	Header files for clutter-gtk library
 Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki clutter-gtk
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
+Requires:	clutter-devel >= 0.2.2
+Requires:	gtk+2-devel >= 2:2.10.0
 
 %description devel
 Header files for clutter-gtk library.
@@ -63,11 +66,14 @@ Dokumentacja API clutter-gtk.
 
 %build
 %{__gtkdocize}
+%{__libtoolize}
 %{__aclocal}
 %{__autoconf}
+%{__autoheader}
 %{__automake}
 %configure \
 	--enable-gtk-doc \
+	--enable-static \
 	--with-html-dir=%{_gtkdocdir}
 
 %{__make}
@@ -86,15 +92,19 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog NEWS README
-%attr(755,root,root) %{_libdir}/lib*.so.*.*.*
+%doc AUTHORS ChangeLog NEWS
+%attr(755,root,root) %{_libdir}/libcluttergtk-*.so.*.*.*
 
 %files devel
 %defattr(644,root,root,755)
+%attr(755,root,root) %{_libdir}/libcluttergtk-*.so
+%{_libdir}/libcluttergtk-*.la
 %{_includedir}/clutter-*/%{name}
-%{_libdir}/lib*.la
-%{_libdir}/lib*.so
-%{_pkgconfigdir}/*.pc
+%{_pkgconfigdir}/clutter-gtk.pc
+
+%files static
+%defattr(644,root,root,755)
+%{_libdir}/libcluttergtk-*.a
 
 %files apidocs
 %defattr(644,root,root,755)

@@ -1,12 +1,12 @@
 Summary:	Library integrating clutter with GTK+
 Summary(pl.UTF-8):	Biblioteka integrująca clutter z GTK+
 Name:		clutter-gtk
-Version:	0.3.1
+Version:	0.4.0
 Release:	1
 License:	LGPL v2+
 Group:		Libraries
-Source0:	http://www.clutter-project.org/sources/clutter-gtk/0.3/%{name}-%{version}.tar.gz
-# Source0-md5:	71951d792b18da82456c0c196ebb8cbc
+Source0:	http://www.clutter-project.org/sources/clutter-gtk/0.4/%{name}-%{version}.tar.gz
+# Source0-md5:	c3daf6a39749a10d4f5c9fbd3ea1da72
 URL:		http://www.clutter-project.org/
 BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake >= 1:1.7
@@ -93,18 +93,18 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS
-%attr(755,root,root) %{_libdir}/libcluttergtk-*.so.*.*.*
+%attr(755,root,root) %{_libdir}/libclutter-gtk-*.so.*.*.*
 
 %files devel
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/libcluttergtk-*.so
-%{_libdir}/libcluttergtk-*.la
+%attr(755,root,root) %{_libdir}/libclutter-gtk-*.so
+%{_libdir}/libclutter-gtk-*.la
 %{_includedir}/clutter-*/%{name}
-%{_pkgconfigdir}/clutter-gtk.pc
+%{_pkgconfigdir}/clutter-gtk-*.pc
 
 %files static
 %defattr(644,root,root,755)
-%{_libdir}/libcluttergtk-*.a
+%{_libdir}/libclutter-gtk-*.a
 
 %files apidocs
 %defattr(644,root,root,755)

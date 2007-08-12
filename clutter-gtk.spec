@@ -10,7 +10,7 @@ Source0:	http://www.clutter-project.org/sources/clutter-gtk/0.4/%{name}-%{versio
 URL:		http://www.clutter-project.org/
 BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake >= 1:1.7
-BuildRequires:	clutter-devel >= 0.3.0
+BuildRequires:	clutter-devel >= 0.4.0
 BuildRequires:	gtk+2-devel >= 2:2.10.0
 BuildRequires:	gtk-doc >= 1.4
 BuildRequires:	libtool
@@ -28,7 +28,7 @@ Summary:	Header files for clutter-gtk library
 Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki clutter-gtk
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-Requires:	clutter-devel >= 0.3.0
+Requires:	clutter-devel >= 0.4.0
 Requires:	gtk+2-devel >= 2:2.10.0
 
 %description devel

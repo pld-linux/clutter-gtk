@@ -4,12 +4,12 @@ Name:		clutter-gtk
 Version:	0.6.0
 Release:	1
 License:	LGPL v2+
-Group:		Libraries
+Group:		X11/Libraries
 Source0:	http://www.clutter-project.org/sources/clutter-gtk/0.6/%{name}-%{version}.tar.gz
 # Source0-md5:	34591bdec4d2498e10ce4dd5aed6ada4
 URL:		http://www.clutter-project.org/
 BuildRequires:	autoconf >= 2.53
-BuildRequires:	automake >= 1:1.7
+BuildRequires:	automake >= 1:1.9
 BuildRequires:	clutter-devel >= 0.6.0
 BuildRequires:	gtk+2-devel >= 2:2.10.0
 BuildRequires:	gtk-doc >= 1.4
@@ -26,7 +26,7 @@ Biblioteka integrująca clutter z GTK+.
 %package devel
 Summary:	Header files for clutter-gtk library
 Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki clutter-gtk
-Group:		Development/Libraries
+Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	clutter-devel >= 0.4.0
 Requires:	gtk+2-devel >= 2:2.10.0
@@ -40,7 +40,7 @@ Pliki nagłówkowe biblioteki clutter-gtk.
 %package static
 Summary:	Static clutter-gtk library
 Summary(pl.UTF-8):	Statyczna biblioteka clutter-gtk
-Group:		Development/Libraries
+Group:		X11/Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
@@ -93,18 +93,19 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS
-%attr(755,root,root) %{_libdir}/libclutter-gtk-*.so.*.*.*
+%attr(755,root,root) %{_libdir}/libclutter-gtk-0.6.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libclutter-gtk-0.6.so.0
 
 %files devel
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/libclutter-gtk-*.so
-%{_libdir}/libclutter-gtk-*.la
-%{_includedir}/clutter-*/%{name}
-%{_pkgconfigdir}/clutter-gtk-*.pc
+%attr(755,root,root) %{_libdir}/libclutter-gtk-0.6.so
+%{_libdir}/libclutter-gtk-0.6.la
+%{_includedir}/clutter-0.6/%{name}
+%{_pkgconfigdir}/clutter-gtk-0.6.pc
 
 %files static
 %defattr(644,root,root,755)
-%{_libdir}/libclutter-gtk-*.a
+%{_libdir}/libclutter-gtk-0.6.a
 
 %files apidocs
 %defattr(644,root,root,755)

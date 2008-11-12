@@ -1,16 +1,17 @@
 Summary:	Library integrating clutter with GTK+
 Summary(pl.UTF-8):	Biblioteka integrująca clutter z GTK+
 Name:		clutter-gtk
-Version:	0.6.1
-Release:	2
+Version:	0.8.2
+Release:	1
 License:	LGPL v2+
 Group:		X11/Libraries
-Source0:	http://www.clutter-project.org/sources/clutter-gtk/0.6/%{name}-%{version}.tar.gz
-# Source0-md5:	580a920643571aca88f7bca113ad1ef0
+Source0:	http://www.clutter-project.org/sources/clutter-gtk/0.8/%{name}-%{version}.tar.gz
+# Source0-md5:	d6d5ebcdaa64e0f4c41cb391e55c8737
 URL:		http://www.clutter-project.org/
 BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake >= 1:1.9
-BuildRequires:	clutter-devel >= 0.6.4
+BuildRequires:	clutter-devel >= 0.8.2
+BuildRequires:	clutter-devel < 0.9
 BuildRequires:	gtk+2-devel >= 2:2.10.0
 BuildRequires:	gtk-doc >= 1.4
 BuildRequires:	libtool
@@ -28,7 +29,8 @@ Summary:	Header files for clutter-gtk library
 Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki clutter-gtk
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-Requires:	clutter-devel >= 0.4.0
+Requires:	clutter-devel >= 0.8.2
+Requires:	clutter-devel < 0.9
 Requires:	gtk+2-devel >= 2:2.10.0
 
 %description devel
@@ -93,19 +95,19 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS
-%attr(755,root,root) %{_libdir}/libclutter-gtk-0.6.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libclutter-gtk-0.6.so.0
+%attr(755,root,root) %{_libdir}/libclutter-gtk-0.8.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libclutter-gtk-0.8.so.0
 
 %files devel
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/libclutter-gtk-0.6.so
-%{_libdir}/libclutter-gtk-0.6.la
-%{_includedir}/clutter-0.6/%{name}
-%{_pkgconfigdir}/clutter-gtk-0.6.pc
+%attr(755,root,root) %{_libdir}/libclutter-gtk-0.8.so
+%{_libdir}/libclutter-gtk-0.8.la
+%{_includedir}/clutter-0.8/%{name}
+%{_pkgconfigdir}/clutter-gtk-0.8.pc
 
 %files static
 %defattr(644,root,root,755)
-%{_libdir}/libclutter-gtk-0.6.a
+%{_libdir}/libclutter-gtk-0.8.a
 
 %files apidocs
 %defattr(644,root,root,755)

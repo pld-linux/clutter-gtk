@@ -11,12 +11,15 @@ URL:		http://www.clutter-project.org/
 BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake >= 1:1.9
 BuildRequires:	clutter-devel >= 1.0.0
+BuildRequires:	docbook-dtd412-xml
 BuildRequires:	gir-repository-devel
+BuildRequires:	glibc-misc
 BuildRequires:	gobject-introspection-devel
 BuildRequires:	gtk+2-devel >= 2:2.10.0
 BuildRequires:	gtk-doc >= 1.4
 BuildRequires:	libtool
 BuildRequires:	pkgconfig
+BuildRequires:	python-modules
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description

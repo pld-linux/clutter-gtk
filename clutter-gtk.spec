@@ -17,12 +17,9 @@ BuildRequires:	glibc-misc
 BuildRequires:	gobject-introspection-devel
 BuildRequires:	gtk+2-devel >= 2:2.10.0
 BuildRequires:	gtk-doc >= 1.4
-BuildRequires:	libdrm-devel
 BuildRequires:	libtool
 BuildRequires:	pkgconfig
 BuildRequires:	python-modules
-BuildRequires:	xorg-lib-libXxf86vm-devel
-BuildRequires:	xorg-proto-dri2proto-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description

@@ -10,17 +10,19 @@ Source0:	http://www.clutter-project.org/sources/clutter-gtk/0.10/%{name}-%{versi
 Patch0:		gobject-introspection.patch
 Patch1:		%{name}-fix.patch
 URL:		http://www.clutter-project.org/
-BuildRequires:	autoconf >= 2.53
-BuildRequires:	automake >= 1:1.9
-BuildRequires:	clutter-devel >= 1.0.0
+BuildRequires:	autoconf >= 2.63
+BuildRequires:	automake >= 1:1.11
+BuildRequires:	clutter-devel >= 1.2.0
 BuildRequires:	docbook-dtd412-xml
 BuildRequires:	glibc-misc
-BuildRequires:	gobject-introspection-devel
-BuildRequires:	gtk+2-devel >= 2:2.10.0
-BuildRequires:	gtk-doc >= 1.4
-BuildRequires:	libtool
+BuildRequires:	gobject-introspection-devel >= 0.9.3
+BuildRequires:	gtk+2-devel >= 2:2.19.5
+BuildRequires:	gtk-doc >= 1.14
+BuildRequires:	libtool >= 2:2.2.6
 BuildRequires:	pkgconfig
 BuildRequires:	python-modules
+Requires:	clutter >= 1.2.0
+Requires:	gtk+2 >= 2:2.19.5
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -34,8 +36,8 @@ Summary:	Header files for clutter-gtk library
 Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki clutter-gtk
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-Requires:	clutter-devel >= 1.0.0
-Requires:	gtk+2-devel >= 2:2.10.0
+Requires:	clutter-devel >= 1.2.0
+Requires:	gtk+2-devel >= 2:2.19.5
 
 %description devel
 Header files for clutter-gtk library.
@@ -73,6 +75,12 @@ Dokumentacja API clutter-gtk.
 %patch1 -p1
 
 %build
+%{__gtkdocize}
+%{__libtoolize}
+%{__aclocal} -I build/autotools
+%{__autoconf}
+%{__autoheader}
+%{__automake}
 %configure \
 	--enable-gtk-doc \
 	--enable-static \
@@ -94,10 +102,10 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog NEWS
+%doc AUTHORS ChangeLog NEWS README
 %attr(755,root,root) %{_libdir}/libclutter-gtk-0.10.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libclutter-gtk-0.10.so.0
-%{_libdir}/girepository-1.0/*.typelib
+%{_libdir}/girepository-1.0/GtkClutter-0.10.typelib
 
 %files devel
 %defattr(644,root,root,755)
@@ -105,7 +113,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/libclutter-gtk-0.10.la
 %{_includedir}/clutter-1.0/%{name}
 %{_pkgconfigdir}/clutter-gtk-0.10.pc
-%{_datadir}/gir-1.0/*.gir
+%{_datadir}/gir-1.0/GtkClutter-0.10.gir
 
 %files static
 %defattr(644,root,root,755)

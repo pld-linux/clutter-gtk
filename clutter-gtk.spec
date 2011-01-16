@@ -1,22 +1,21 @@
 Summary:	Library integrating clutter with GTK+
 Summary(pl.UTF-8):	Biblioteka integrująca clutter z GTK+
 Name:		clutter-gtk
-Version:	0.10.8
-Release:	2
+Version:	0.91.6
+Release:	0.1
 License:	LGPL v2+
 Group:		X11/Libraries
-Source0:	http://www.clutter-project.org/sources/clutter-gtk/0.10/%{name}-%{version}.tar.gz
-# Source0-md5:	2233c7f92535f5017accea04701131cd
-Patch0:		gobject-introspection.patch
-Patch1:		%{name}-fix.patch
+Source0:	http://www.clutter-project.org/sources/clutter-gtk/0.91/%{name}-%{version}.tar.gz
+# Source0-md5:	b31ef8135718db08e4e7c99031ef31c8
 URL:		http://www.clutter-project.org/
 BuildRequires:	autoconf >= 2.63
 BuildRequires:	automake >= 1:1.11
-BuildRequires:	clutter-devel >= 1.2.0
+BuildRequires:	clutter-devel >= 1.3.8
 BuildRequires:	docbook-dtd412-xml
+BuildRequires:	gettext >= 0.17
 BuildRequires:	glibc-misc
-BuildRequires:	gobject-introspection-devel >= 0.9.3
-BuildRequires:	gtk+2-devel >= 2:2.19.5
+BuildRequires:	gobject-introspection-devel >= 0.9.12
+BuildRequires:	gtk+3-devel >= 2.91.7
 BuildRequires:	gtk-doc >= 1.14
 BuildRequires:	libtool >= 2:2.2.6
 BuildRequires:	pkgconfig
@@ -37,7 +36,7 @@ Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki clutter-gtk
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	clutter-devel >= 1.2.0
-Requires:	gtk+2-devel >= 2:2.19.5
+Requires:	gtk+3-devel >= 2.91.7
 
 %description devel
 Header files for clutter-gtk library.
@@ -71,8 +70,6 @@ Dokumentacja API clutter-gtk.
 
 %prep
 %setup -q
-%patch0 -p1
-%patch1 -p1
 
 %build
 %{__gtkdocize}
@@ -103,21 +100,21 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README
-%attr(755,root,root) %{_libdir}/libclutter-gtk-0.10.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libclutter-gtk-0.10.so.0
-%{_libdir}/girepository-1.0/GtkClutter-0.10.typelib
+%attr(755,root,root) %{_libdir}/libclutter-gtk-1.0.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libclutter-gtk-1.0.so.0
+%{_libdir}/girepository-1.0/GtkClutter-1.0.typelib
 
 %files devel
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/libclutter-gtk-0.10.so
-%{_libdir}/libclutter-gtk-0.10.la
-%{_includedir}/clutter-1.0/%{name}
-%{_pkgconfigdir}/clutter-gtk-0.10.pc
-%{_datadir}/gir-1.0/GtkClutter-0.10.gir
+%attr(755,root,root) %{_libdir}/libclutter-gtk-1.0.so
+%{_libdir}/libclutter-gtk-1.0.la
+%{_includedir}/clutter-gtk-1.0
+%{_pkgconfigdir}/clutter-gtk-1.0.pc
+%{_datadir}/gir-1.0/GtkClutter-1.0.gir
 
 %files static
 %defattr(644,root,root,755)
-%{_libdir}/libclutter-gtk-0.10.a
+%{_libdir}/libclutter-gtk-1.0.a
 
 %files apidocs
 %defattr(644,root,root,755)

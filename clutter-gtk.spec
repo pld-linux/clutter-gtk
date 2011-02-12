@@ -1,12 +1,12 @@
 Summary:	Library integrating clutter with GTK+
 Summary(pl.UTF-8):	Biblioteka integrująca clutter z GTK+
 Name:		clutter-gtk
-Version:	0.91.6
-Release:	0.1
+Version:	0.91.8
+Release:	1
 License:	LGPL v2+
 Group:		X11/Libraries
 Source0:	http://www.clutter-project.org/sources/clutter-gtk/0.91/%{name}-%{version}.tar.gz
-# Source0-md5:	b31ef8135718db08e4e7c99031ef31c8
+# Source0-md5:	a449e58efa40cb2991940b89b24c0d1e
 URL:		http://www.clutter-project.org/
 BuildRequires:	autoconf >= 2.63
 BuildRequires:	automake >= 1:1.11
@@ -15,13 +15,12 @@ BuildRequires:	docbook-dtd412-xml
 BuildRequires:	gettext >= 0.17
 BuildRequires:	glibc-misc
 BuildRequires:	gobject-introspection-devel >= 0.9.12
-BuildRequires:	gtk+3-devel >= 2.91.7
+BuildRequires:	gtk+3-devel >= 3.0.0
 BuildRequires:	gtk-doc >= 1.14
 BuildRequires:	libtool >= 2:2.2.6
 BuildRequires:	pkgconfig
 BuildRequires:	python-modules
 Requires:	clutter >= 1.2.0
-Requires:	gtk+2 >= 2:2.19.5
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -79,6 +78,7 @@ Dokumentacja API clutter-gtk.
 %{__autoheader}
 %{__automake}
 %configure \
+	--disable-silent-rules \
 	--enable-gtk-doc \
 	--enable-static \
 	--with-html-dir=%{_gtkdocdir}
@@ -90,6 +90,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
+
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/*.la
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -107,7 +109,6 @@ rm -rf $RPM_BUILD_ROOT
 %files devel
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libclutter-gtk-1.0.so
-%{_libdir}/libclutter-gtk-1.0.la
 %{_includedir}/clutter-gtk-1.0
 %{_pkgconfigdir}/clutter-gtk-1.0.pc
 %{_datadir}/gir-1.0/GtkClutter-1.0.gir

@@ -10,9 +10,9 @@ Source0:	http://www.clutter-project.org/sources/clutter-gtk/1.0/%{name}-%{versio
 URL:		http://www.clutter-project.org/
 BuildRequires:	autoconf >= 2.63
 BuildRequires:	automake >= 1:1.11
-BuildRequires:	clutter-devel >= 1.3.8
+BuildRequires:	clutter-devel >= 1.4.0
 BuildRequires:	docbook-dtd412-xml
-BuildRequires:	gettext >= 0.17
+BuildRequires:	gettext-devel >= 0.18
 BuildRequires:	glibc-misc
 BuildRequires:	gobject-introspection-devel >= 0.9.12
 BuildRequires:	gtk+3-devel >= 3.0.0
@@ -20,7 +20,7 @@ BuildRequires:	gtk-doc >= 1.14
 BuildRequires:	libtool >= 2:2.2.6
 BuildRequires:	pkgconfig
 BuildRequires:	python-modules
-Requires:	clutter >= 1.2.0
+Requires:	clutter >= 1.4.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -34,7 +34,7 @@ Summary:	Header files for clutter-gtk library
 Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki clutter-gtk
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-Requires:	clutter-devel >= 1.2.0
+Requires:	clutter-devel >= 1.4.0
 Requires:	gtk+3-devel >= 3.0.0
 
 %description devel

@@ -2,7 +2,7 @@ Summary:	Library integrating clutter with GTK+
 Summary(pl.UTF-8):	Biblioteka integrująca clutter z GTK+
 Name:		clutter-gtk
 Version:	0.10.8
-Release:	3
+Release:	4
 Epoch:		1
 License:	LGPL v2+
 Group:		X11/Libraries
@@ -95,6 +95,8 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/*.la
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -111,7 +113,6 @@ rm -rf $RPM_BUILD_ROOT
 %files devel
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libclutter-gtk-0.10.so
-%{_libdir}/libclutter-gtk-0.10.la
 %{_includedir}/clutter-1.0/%{name}
 %{_pkgconfigdir}/clutter-gtk-0.10.pc
 %{_datadir}/gir-1.0/GtkClutter-0.10.gir

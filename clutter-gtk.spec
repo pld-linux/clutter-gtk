@@ -1,12 +1,12 @@
 Summary:	Library integrating clutter with GTK+
 Summary(pl.UTF-8):	Biblioteka integrująca clutter z GTK+
 Name:		clutter-gtk
-Version:	1.0.0
+Version:	1.0.2
 Release:	1
 License:	LGPL v2+
 Group:		X11/Libraries
-Source0:	http://www.clutter-project.org/sources/clutter-gtk/1.0/%{name}-%{version}.tar.gz
-# Source0-md5:	1cd5e5421a49ac03c176c6910523413c
+Source0:	http://www.clutter-project.org/sources/clutter-gtk/1.0/%{name}-%{version}.tar.bz2
+# Source0-md5:	6c268fa8420492fa00ab9295e50cf3ed
 URL:		http://www.clutter-project.org/
 BuildRequires:	autoconf >= 2.63
 BuildRequires:	automake >= 1:1.11
@@ -91,6 +91,8 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
+%find_lang cluttergtk-1.0
+
 %{__rm} $RPM_BUILD_ROOT%{_libdir}/*.la
 
 %clean
@@ -99,9 +101,9 @@ rm -rf $RPM_BUILD_ROOT
 %post	-p /sbin/ldconfig
 %postun	-p /sbin/ldconfig
 
-%files
+%files -f cluttergtk-1.0.lang
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog NEWS README
+%doc NEWS README
 %attr(755,root,root) %{_libdir}/libclutter-gtk-1.0.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libclutter-gtk-1.0.so.0
 %{_libdir}/girepository-1.0/GtkClutter-1.0.typelib

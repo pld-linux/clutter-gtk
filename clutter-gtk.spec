@@ -3,7 +3,6 @@ Summary(pl.UTF-8):	Biblioteka integrująca clutter z GTK+
 Name:		clutter-gtk
 Version:	0.10.8
 Release:	5
-Epoch:		1
 License:	LGPL v2+
 Group:		X11/Libraries
 Source0:	http://www.clutter-project.org/sources/clutter-gtk/0.10/%{name}-%{version}.tar.gz
@@ -36,7 +35,7 @@ Biblioteka integrująca clutter z GTK+.
 Summary:	Header files for clutter-gtk library
 Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki clutter-gtk
 Group:		X11/Development/Libraries
-Requires:	%{name} = %{epoch}:%{version}-%{release}
+Requires:	%{name} = %{version}-%{release}
 Requires:	clutter-devel >= 1.2.0
 Requires:	gtk+2-devel >= 2:2.19.5
 
@@ -50,7 +49,7 @@ Pliki nagłówkowe biblioteki clutter-gtk.
 Summary:	Static clutter-gtk library
 Summary(pl.UTF-8):	Statyczna biblioteka clutter-gtk
 Group:		X11/Development/Libraries
-Requires:	%{name}-devel = %{epoch}:%{version}-%{release}
+Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 Static clutter-gtk library.

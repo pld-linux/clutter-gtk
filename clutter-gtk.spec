@@ -23,6 +23,7 @@ BuildRequires:	python-modules
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
 Requires:	clutter >= 1.10.0
+Requires:	gtk+3 >= 3.2.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description

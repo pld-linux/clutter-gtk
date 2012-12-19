@@ -1,12 +1,12 @@
 Summary:	Library integrating clutter with GTK+
 Summary(pl.UTF-8):	Biblioteka integrująca clutter z GTK+
 Name:		clutter-gtk
-Version:	1.4.0
+Version:	1.4.2
 Release:	1
 License:	LGPL v2+
 Group:		X11/Libraries
 Source0:	http://download.gnome.org/sources/clutter-gtk/1.4/%{name}-%{version}.tar.xz
-# Source0-md5:	16185e8134b74314c59859dd7acc4f32
+# Source0-md5:	842601b584daf4447a46799a4ba88df6
 URL:		http://www.clutter-project.org/
 BuildRequires:	autoconf >= 2.63
 BuildRequires:	automake >= 1:1.11

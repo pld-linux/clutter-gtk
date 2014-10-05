@@ -37,7 +37,7 @@ Summary:	Header files for clutter-gtk library
 Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki clutter-gtk
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-Requires:	clutter-devel >= 1.13.7
+Requires:	clutter-devel >= 1.18.0
 Requires:	gtk+3-devel >= 3.6.0
 
 %description devel

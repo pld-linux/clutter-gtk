@@ -5,7 +5,7 @@ Version:	1.6.0
 Release:	1
 License:	LGPL v2+
 Group:		X11/Libraries
-Source0:	http://download.gnome.org/sources/clutter-gtk/1.6/%{name}-%{version}.tar.xz
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/clutter-gtk/1.6/%{name}-%{version}.tar.xz
 # Source0-md5:	08e5d7c249733d4d96bbbd2dc970a06c
 URL:		http://www.clutter-project.org/
 BuildRequires:	autoconf >= 2.63

@@ -12,7 +12,7 @@ BuildRequires:	autoconf >= 2.63
 BuildRequires:	automake >= 1:1.11
 BuildRequires:	clutter-devel >= 1.18.0
 BuildRequires:	docbook-dtd412-xml
-BuildRequires:	gettext-devel >= 0.18
+BuildRequires:	gettext-tools >= 0.18
 BuildRequires:	glibc-misc
 BuildRequires:	gobject-introspection-devel >= 0.9.12
 BuildRequires:	gtk+3-devel >= 3.6.0

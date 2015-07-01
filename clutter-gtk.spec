@@ -1,16 +1,16 @@
 Summary:	Library integrating clutter with GTK+
 Summary(pl.UTF-8):	Biblioteka integrująca clutter z GTK+
 Name:		clutter-gtk
-Version:	1.6.0
-Release:	2
+Version:	1.6.2
+Release:	1
 License:	LGPL v2+
 Group:		X11/Libraries
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/clutter-gtk/1.6/%{name}-%{version}.tar.xz
-# Source0-md5:	08e5d7c249733d4d96bbbd2dc970a06c
+# Source0-md5:	557d814c3e70cc3a2d1cf3816919b14f
 URL:		http://www.clutter-project.org/
 BuildRequires:	autoconf >= 2.63
 BuildRequires:	automake >= 1:1.11
-BuildRequires:	clutter-devel >= 1.18.0
+BuildRequires:	clutter-devel >= 1.22.4
 BuildRequires:	docbook-dtd412-xml
 BuildRequires:	gettext-tools >= 0.18
 BuildRequires:	glibc-misc
@@ -22,7 +22,7 @@ BuildRequires:	pkgconfig
 BuildRequires:	python-modules
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
-Requires:	clutter >= 1.18.0
+Requires:	clutter >= 1.22.4
 Requires:	gtk+3 >= 3.6.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -37,7 +37,7 @@ Summary:	Header files for clutter-gtk library
 Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki clutter-gtk
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-Requires:	clutter-devel >= 1.18.0
+Requires:	clutter-devel >= 1.22.4
 Requires:	gtk+3-devel >= 3.6.0
 
 %description devel

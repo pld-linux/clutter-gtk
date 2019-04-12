@@ -1,22 +1,22 @@
 Summary:	Library integrating clutter with GTK+
 Summary(pl.UTF-8):	Biblioteka integrująca clutter z GTK+
 Name:		clutter-gtk
-Version:	1.8.2
+Version:	1.8.4
 Release:	1
 License:	LGPL v2+
 Group:		X11/Libraries
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/clutter-gtk/1.8/%{name}-%{version}.tar.xz
-# Source0-md5:	6698207ee6e3d5a1c0ffc0a23444e12f
+# Source0-md5:	b363ac9878e2337be887b8ee9e1da00e
 URL:		http://www.clutter-project.org/
 BuildRequires:	autoconf >= 2.63
-BuildRequires:	automake >= 1:1.11
+BuildRequires:	automake >= 1:1.14
 BuildRequires:	clutter-devel >= 1.24.0
 BuildRequires:	docbook-dtd412-xml
 BuildRequires:	gettext-tools >= 0.18
 BuildRequires:	glibc-misc
-BuildRequires:	gobject-introspection-devel >= 0.9.12
+BuildRequires:	gobject-introspection-devel >= 1.32
 BuildRequires:	gtk+3-devel >= 3.22.0
-BuildRequires:	gtk-doc >= 1.14
+BuildRequires:	gtk-doc >= 1.24
 BuildRequires:	libtool >= 2:2.2.6
 BuildRequires:	pkgconfig
 BuildRequires:	python-modules
@@ -97,9 +97,9 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-%find_lang cluttergtk-1.0
-
 %{__rm} $RPM_BUILD_ROOT%{_libdir}/*.la
+
+%find_lang cluttergtk-1.0
 
 %clean
 rm -rf $RPM_BUILD_ROOT
